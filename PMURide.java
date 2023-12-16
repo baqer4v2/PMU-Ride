@@ -35,10 +35,29 @@ public class PMURide {
             }
         }
     }
+    public static boolean createAccount(String email, String password) {
+        for (UserAccount account : userAccountsData) {
+            if (account.getEmail().equals(email)) {
+                return false; // Email already exists
+            }
+        }
+        UserAccount newAccount = new UserAccount(email, password);
+        userAccountsData.add(newAccount);
+        return true;
+    }
 
+    public static boolean login(String email, String password) {
+        for (UserAccount account : userAccountsData) {
+            if (account.getEmail().equals(email) && account.getPassword().equals(password)) {
+                currentUser = account; // Set the current user
+                return true;
+            }
+        }
+        return false; // No matching account found
+    }
     public static boolean changePasswordRequest() {
 
-
+return false;
     }
 
     public static boolean changePassword(String newPassword) {
