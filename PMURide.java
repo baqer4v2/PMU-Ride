@@ -22,7 +22,7 @@ public class PMURide {
                     break;
 
                 case 2:
-
+                    loginRequest();
                     break;
 
                 case 3:
@@ -80,6 +80,23 @@ public class PMURide {
         }
         userAccountsData.add(newAccount);
         return true;
+    }
+
+    public static void loginRequest() {
+        System.out.print("\nPlease enter your email address: ");
+        String email = scanner.next();
+
+        System.out.print("\nPlease enter your Password: ");
+        String password = scanner.next();
+
+        boolean loginState = login(email, password);
+        if(loginState) {
+            System.out.println("You have been Logged in Successfully\n");
+            System.out.println(currentUser);
+        }
+        else {
+            System.out.println("Email or Password is incorrect");
+        }
     }
 
     public static boolean login(String email, String password) {
