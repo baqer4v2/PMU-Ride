@@ -42,10 +42,10 @@ public class PMURide {
     }
 
     public static void createAccountRequest() {
-        boolean driver = false;
+        boolean isDriver = false;
         System.out.println("Are you a driver? (Y/N): ");
-        if (scanner.next().equals("Y")) {
-            driver = true;
+        if (scanner.next().equalsIgnoreCase("Y")) {
+            isDriver = true;
         }
 
         System.out.print("\nPlease enter your email address: ");
@@ -57,15 +57,27 @@ public class PMURide {
         System.out.print("\nPlease enter your name: ");
         String name = scanner.next();
 
-        boolean check = createAccount(name, email, password, driver);
+        boolean accountCreated = createAccount(name, email, password, isDriver);
+        if (accountCreated) {
+            System.out.println("Account created successfully.");
+        } else {
+            System.out.println("Account creation failed. Email already in use.");
+        }
     }
-    public static boolean createAccount(String email, String password, boolean driver) {
+
+    public static boolean createAccount(String name, String email, String password, boolean isDriver) {
         for (UserAccount account : userAccountsData) {
             if (account.getEmail().equals(email)) {
                 return false; // Email already exists
             }
         }
-        UserAccount newAccount = new UserAccount(email, password);
+
+        UserAccount newAccount;
+        if (isDriver) {
+            newAccount = new Driver(name, email, password);
+        } else {
+            newAccount = new Passenger(name, email, password);
+        }
         userAccountsData.add(newAccount);
         return true;
     }
