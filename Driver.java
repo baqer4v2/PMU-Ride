@@ -2,10 +2,10 @@ public class Driver extends UserAccount {
     private String name;
     private float rating;
 
-    public Driver(String name, float rating) {
-        super(); // Call to UserAccount constructor
+    public Driver(String name, String email, String password) {
+        super(email, password); // Call to UserAccount constructor
         this.name = name;
-        this.rating = rating;
+        this.rating = 0.0f;
     }
 
     // View available drivers - placeholder for actual implementation

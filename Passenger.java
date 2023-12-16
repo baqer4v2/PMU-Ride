@@ -1,13 +1,25 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Passenger {
+public class Passenger extends UserAccount {
     private List<String> messages;
     private boolean hasNewMessages;
+    private String name;
 
-    public Passenger() {
+    public Passenger(String name, String email, String password) {
+        super(email, password);
+
         this.messages = new ArrayList<>();
         this.hasNewMessages = false;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     // Method to send a message
