@@ -8,6 +8,12 @@ public class Driver extends UserAccount {
         this.rating = 0.0f;
     }
 
+    @Override
+    public String toString() {
+        return "Driver{" + "name='" + name + '\'' +
+                ", rating=" + rating + '}';
+    }
+
     // View available drivers - placeholder for actual implementation
     public void viewAvailableDrivers() {
         System.out.println("Displaying available drivers...");

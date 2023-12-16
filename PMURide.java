@@ -150,7 +150,6 @@ public class PMURide {
         System.out.println("\t3: Reset Password");
         System.out.println("\t4: Exit");
     }
-
     public static void printGoodbyeMessage() {
 
 

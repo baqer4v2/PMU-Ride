@@ -6,12 +6,19 @@ public class Passenger extends UserAccount {
     private boolean hasNewMessages;
     private String name;
 
+    @Override
+    public String toString() {
+        return "Passenger{" + "messages=" + messages + ", hasNewMessages=" + hasNewMessages +
+                ", name='" + name + '\'' + '}';
+    }
+
     public Passenger(String name, String email, String password) {
         super(email, password);
 
         this.messages = new ArrayList<>();
         this.hasNewMessages = false;
         this.name = name;
+
     }
 
     public String getName() {
