@@ -67,7 +67,7 @@ public class PMURide {
 
     public static boolean createAccount(String name, String email, String password, boolean isDriver) {
         for (UserAccount account : userAccountsData) {
-            if (account.getEmail().equals(email)) {
+            if (account.getEmail().equalsIgnoreCase(email)) {
                 return false; // Email already exists
             }
         }
@@ -101,7 +101,7 @@ public class PMURide {
 
     public static boolean login(String email, String password) {
         for (UserAccount account : userAccountsData) {
-            if (account.getEmail().equals(email) && account.getPassword().equals(password)) {
+            if (account.getEmail().equalsIgnoreCase(email) && account.getPassword().equals(password)) {
                 currentUser = account; // Set the current user
                 return true;
             }
@@ -114,7 +114,7 @@ public class PMURide {
             System.out.print("\nYou are not logged in. Please enter your email address: ");
             String email = scanner.next();
             for (UserAccount account : userAccountsData) {
-                if (account.getEmail().equals(email)) {
+                if (account.getEmail().equalsIgnoreCase(email)) {
                     currentUser = account; // Set the current user
                 }
             }
