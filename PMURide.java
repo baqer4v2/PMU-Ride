@@ -18,7 +18,7 @@ public class PMURide {
             int userInput = scanner.nextInt();
             switch (userInput) {
                 case 1:
-
+                    createAccountRequest();
                     break;
 
                 case 2:
@@ -26,7 +26,7 @@ public class PMURide {
                     break;
 
                 case 3:
-
+                    changePasswordRequest();
                     break;
 
                 case 4:
@@ -92,20 +92,28 @@ public class PMURide {
         return false; // No matching account found
     }
 
-    public static boolean changePasswordRequest() {
-
-        return false;
-    }
-
-    public static boolean changePassword(String newPassword) {
+    public static void changePasswordRequest() {
         if (currentUser == null) {
-            System.out.println("No user is currently logged in.");
-            return false;
-        } else {
+            System.out.print("\nYou are not logged in. Please enter your email address: ");
+            String email = scanner.next();
+            for (UserAccount account : userAccountsData) {
+                if (account.getEmail().equals(email)) {
+                    currentUser = account; // Set the current user
+                }
+            }
+        }
+        if (currentUser == null) {
+            System.out.println("No user has been found.");
+            return;
+        }
+
+        System.out.print("\nPlease enter your new password: ");
+        changePassword(scanner.next());
+    }
+    public static boolean changePassword(String newPassword) {
             currentUser.setPassword(newPassword);
             System.out.println("Password changed successfully for " + currentUser.getEmail());
             return true;
-        }
     }
 
     public static void printWelcomeMessage() {
