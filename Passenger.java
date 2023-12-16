@@ -14,6 +14,14 @@ public class Passenger extends UserAccount {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     // Method to send a message
     public void sendMessage(String message) {
         // This method would typically interact with a messaging system.
