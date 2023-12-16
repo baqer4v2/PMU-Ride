@@ -1,5 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class PMURide {
     public static void main(String[] args) {
+        UserAccount currentUser = null;
+
+        List<UserAccount> userAccountsData = new ArrayList<UserAccount>();
+
 
 
     }
