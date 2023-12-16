@@ -8,15 +8,47 @@ public class PMURide {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        printWelcomeMessage();
+
+        boolean loopControl = true;
+        while (loopControl) {
+            loopControl = false;
+
+            int userInput = scanner.nextInt();
+            switch (userInput) {
+                case 1:
+
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    break;
+
+                default:
+                    System.out.println("Input is invalid try again");
+                    loopControl = true;
+                    break;
+            }
+        }
+    }
+
+    public static boolean changePasswordRequest() {
+
 
     }
 
-    public static void changePassword(String newPassword) {
+    public static boolean changePassword(String newPassword) {
         if (currentUser == null) {
             System.out.println("No user is currently logged in.");
+            return false;
         } else {
             currentUser.setPassword(newPassword);
             System.out.println("Password changed successfully for " + currentUser.getEmail());
+            return true;
         }
     }
 
@@ -31,7 +63,9 @@ public class PMURide {
            }
         System.out.print("\n\n");
         System.out.println("Please choose from the following (Type the number then hit enter):");
-
+        System.out.println("\t1: Create Account");
+        System.out.println("\t2: Log in");
+        System.out.println("\t3: Reset Password");
 
         }
 
