@@ -22,4 +22,9 @@ public class UserAccount {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "Email Address: " + email + "\n";
+    }
 }

@@ -75,7 +75,8 @@ public class PMURide {
         UserAccount newAccount;
         if (isDriver) {
             newAccount = new Driver(name, email, password);
-        } else {
+        }
+        else {
             newAccount = new Passenger(name, email, password);
         }
         userAccountsData.add(newAccount);

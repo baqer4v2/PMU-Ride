@@ -10,8 +10,7 @@ public class Driver extends UserAccount {
 
     @Override
     public String toString() {
-        return "Driver{" + "name='" + name + '\'' +
-                ", rating=" + rating + '}';
+        return super.toString() + "Name: " + name + "\n" + "Current Rating: " + rating + "\n" + "Account Type: Driver";
     }
 
     // View available drivers - placeholder for actual implementation

@@ -8,8 +8,7 @@ public class Passenger extends UserAccount {
 
     @Override
     public String toString() {
-        return "Passenger{" + "messages=" + messages + ", hasNewMessages=" + hasNewMessages +
-                ", name='" + name + '\'' + '}';
+        return super.toString() + "Name: " + name + "\n" + "Account Type: Passenger";
     }
 
     public Passenger(String name, String email, String password) {
