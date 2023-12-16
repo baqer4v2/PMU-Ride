@@ -1,12 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class PMURide {
     private static UserAccount currentUser = null;
     private static List<UserAccount> userAccountsData = new ArrayList<>();
 
     public static void main(String[] args) {
-        // Your existing main method code...
+        Scanner scanner = new Scanner(System.in);
+
+
     }
 
     public static void changePassword(String newPassword) {
@@ -26,7 +29,11 @@ public class PMURide {
                 System.out.print("Welcome To PMU Ride");
             }
             System.out.print('*');
+           }
+        System.out.print("\n\n");
+        System.out.println("Please choose from the following (Type the number then hit enter):");
+
+
         }
-        System.out.println(); // Print a new line for formatting
+
     }
-}
