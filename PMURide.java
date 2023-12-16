@@ -9,7 +9,6 @@ public class PMURide {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-
     }
 
     public static void changePassword(String newPassword) {
